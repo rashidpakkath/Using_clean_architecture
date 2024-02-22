@@ -24,12 +24,16 @@ class HomePage extends ConsumerWidget {
               SizedBox(
                 height: apptheme.spaces.space_200,
               ),
-              Text(
-                constants.txtTask,
-                style: apptheme.typography.h900,
-              ),
-              SizedBox(
-                height: apptheme.spaces.space_200,
+              Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(left: apptheme.spaces.space_250),
+                    child: Text(
+                      constants.txtTask,
+                      style: apptheme.typography.h900,
+                    ),
+                  ),
+                ],
               ),
               ListViewWidget(),
             ],

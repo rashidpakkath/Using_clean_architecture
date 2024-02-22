@@ -19,6 +19,7 @@ class BottomsheetWidget extends ConsumerWidget {
     final constants = ref.watch(appConstantsProvider);
     final colors = AppTheme.of(context).colors;
     final space = AppTheme.of(context).spaces;
+    final style = AppTheme.of(context).typography;
 
     void cancelAction() {
       Navigator.pop(context);
@@ -74,6 +75,9 @@ class BottomsheetWidget extends ConsumerWidget {
                     onPressed: cancelAction,
                     child: Text(
                       constants.txtCancel,
+                      style: style.h400!.copyWith(
+                        color: colors.secondary,
+                      ),
                     ),
                   ),
                   ElevatedButton(
@@ -87,6 +91,9 @@ class BottomsheetWidget extends ConsumerWidget {
                     ),
                     child: Text(
                       todo != null ? constants.txtUpdate : constants.txtCreate,
+                      style: style.h400!.copyWith(
+                        color: colors.secondary,
+                      ),
                     ),
                   ),
                 ],

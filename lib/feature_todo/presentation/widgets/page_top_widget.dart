@@ -9,9 +9,17 @@ class PageTopWidget extends StatelessWidget {
     final apptheme = AppTheme.of(context);
     return Container(
       width: MediaQuery.sizeOf(context).width,
-      height: apptheme.spaces.space_500 * 6,
+      height: apptheme.spaces.space_500 * 5.5,
       decoration: BoxDecoration(
         color: apptheme.colors.primary,
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            apptheme.colors.textInverse,
+            apptheme.colors.primary,
+          ],
+        ),
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(apptheme.spaces.space_600),
         ),
@@ -19,7 +27,7 @@ class PageTopWidget extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.only(
           left: apptheme.spaces.space_400,
-          bottom: apptheme.spaces.space_300,
+          bottom: apptheme.spaces.space_200,
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,

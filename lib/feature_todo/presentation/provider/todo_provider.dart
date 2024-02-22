@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:todo_project_task/core/excepation/base_excepation.dart';
 import 'package:todo_project_task/feature_todo/data/repository/todo_repository_impl.dart';
+import 'package:todo_project_task/feature_todo/domain/entity/todo_entity.dart';
 import 'package:todo_project_task/feature_todo/domain/repository/todo_reposotory.dart';
 import 'package:todo_project_task/feature_todo/domain/usecase/add_todo_usecase.dart';
 import 'package:todo_project_task/feature_todo/domain/usecase/delete_todo_usecase.dart';
+import 'package:todo_project_task/feature_todo/domain/usecase/get_todo_usecase.dart';
 import 'package:todo_project_task/feature_todo/domain/usecase/update_todo_usecase.dart';
 
 part 'todo_provider.g.dart';
@@ -91,4 +93,11 @@ class TodoState extends _$TodoState {
 
     return null;
   }
+}
+
+///get todo
+@riverpod
+Stream<List<TodoEntity>> todo(TodoRef ref) {
+  final repository = ref.watch(todoRepositoryProvider);
+  return GetTodoUsecase(repository: repository)();
 }
