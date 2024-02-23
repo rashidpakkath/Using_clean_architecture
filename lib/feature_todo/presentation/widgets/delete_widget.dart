@@ -35,9 +35,6 @@ class DeleteWidget extends ConsumerWidget {
           },
           child: Text(
             constants.txtDelete,
-            style: style.h400!.copyWith(
-              color: colors.textSubtlest,
-            ),
           ),
         )
       ],

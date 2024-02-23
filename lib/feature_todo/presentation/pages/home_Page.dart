@@ -16,11 +16,11 @@ class HomePage extends ConsumerWidget {
     return SafeArea(
       top: false,
       child: Scaffold(
-        backgroundColor: Color(0xFFf1faee),
+        backgroundColor: apptheme.colors.backgroundDanger,
         body: SingleChildScrollView(
           child: Column(
             children: [
-              PageTopWidget(),
+              const PageTopWidget(),
               SizedBox(
                 height: apptheme.spaces.space_200,
               ),
@@ -35,11 +35,11 @@ class HomePage extends ConsumerWidget {
                   ),
                 ],
               ),
-              ListViewWidget(),
+              const ListViewWidget(),
             ],
           ),
         ),
-        bottomNavigationBar: BottomWidget(),
+        bottomNavigationBar: const BottomWidget(),
       ),
     );
   }

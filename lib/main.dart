@@ -2,7 +2,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:todo_project_task/core/theme/light_theme.dart';
-import 'package:todo_project_task/feature_todo/presentation/pages/home_Page.dart';
+import 'package:todo_project_task/core/theme/theme_provider.dart';
+import 'package:todo_project_task/feature_todo/presentation/pages/home_page.dart';
 import 'package:todo_project_task/firebase_options.dart';
 
 Future<void> main() async {
@@ -19,7 +20,7 @@ class MyApp extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ref.watch(lightThemeProvider),
+      theme: ref.watch(themeProvider),
       home: const HomePage(),
     );
   }

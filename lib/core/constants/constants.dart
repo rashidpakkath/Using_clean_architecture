@@ -12,6 +12,8 @@ class AppConstants {
   final String txtDelete = 'Delete';
   final String txtSure = 'Are you sure ?';
   final String txtMassege = 'This todo will delete permenantly';
+  final String txtLight = 'Light';
+  final String txtDark = 'Dark';
 }
 
 @riverpod

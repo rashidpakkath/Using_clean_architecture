@@ -14,8 +14,8 @@ final _lightTheme = ThemeData(brightness: Brightness.light, extensions: [
     text: Colors.black,
     textInverse: AppColorPalette.secondary,
     textSubtle: AppColorPalette.sub,
-    textSubtlest: Colors.red,
-    backgroundDanger: Colors.black12,
+    textSubtlest: Colors.white,
+    backgroundDanger: AppColorPalette.backGround,
   ),
   AppSpaceExtension.fromBaseSpace(8),
   AppTypographyExtension.fromColors(
