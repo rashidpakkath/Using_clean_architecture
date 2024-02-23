@@ -15,8 +15,6 @@ class DeleteWidget extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final constants = ref.watch(appConstantsProvider);
-    final style = AppTheme.of(context).typography;
-    final colors = AppTheme.of(context).colors;
     return AlertDialog(
       title: Text(constants.txtSure),
       content: Text(constants.txtMassege),

@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:todo_project_task/core/theme/app_theme.dart';
+import 'package:intl/intl.dart';
 
 class PageTopWidget extends StatelessWidget {
   const PageTopWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
+    DateTime now = DateTime.now();
+    String formattedDate = DateFormat('EEEE \nd/M/y ').format(now);
     final apptheme = AppTheme.of(context);
     return Container(
       width: MediaQuery.sizeOf(context).width,
@@ -34,17 +37,12 @@ class PageTopWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "Monday",
-              style: apptheme.typography.h500!.copyWith(
+              formattedDate,
+              style: apptheme.typography.h600!.copyWith(
                 color: apptheme.colors.secondary,
                 fontSize: apptheme.spaces.space_400,
               ),
             ),
-            Text(
-              "25/03/2024",
-              style: apptheme.typography.h900!
-                  .copyWith(color: apptheme.colors.secondary),
-            )
           ],
         ),
       ),
