@@ -17,7 +17,7 @@ class ListViewWidget extends ConsumerWidget {
     final constants = ref.watch(appConstantsProvider);
     return switch (ref.watch(todoProvider)) {
       // ignore: unnecessary_null_comparison
-      AsyncData(:final value) => value == null
+      AsyncData(:final value) => (ref.watch(todoProvider)) == null
           ? Center(
               child: Text(
                 constants.txtNoTodos,
