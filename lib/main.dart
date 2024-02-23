@@ -11,9 +11,11 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  await FirebaseAuth.instance.signInAnonymously();
+
   var user = await FirebaseAuth.instance.currentUser;
-  var uid = user!.uid;
+  if (user == null) {
+    await FirebaseAuth.instance.signInAnonymously();
+  }
   runApp(const ProviderScope(child: MyApp()));
 }
 

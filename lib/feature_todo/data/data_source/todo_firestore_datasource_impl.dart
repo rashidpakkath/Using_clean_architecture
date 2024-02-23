@@ -8,12 +8,11 @@ part 'todo_firestore_datasource_impl.g.dart';
 
 class TodoFirestoreDataSourceImpl implements TodoFirestoreDataSource {
   final firestore = FirebaseFirestore.instance;
-  final user = FirebaseAuth.instance.currentUser!.uid;
-  final collection =
-      FirebaseFirestore.instance.collection('todos').withConverter(
-            fromFirestore: TodoModel.fromFirestore,
-            toFirestore: (model, _) => model.toFirestore(),
-          );
+  static final user = FirebaseAuth.instance.currentUser!.uid;
+  final collection = FirebaseFirestore.instance.collection(user).withConverter(
+        fromFirestore: TodoModel.fromFirestore,
+        toFirestore: (model, _) => model.toFirestore(),
+      );
   @override
   Future<void> addtodo(TodoModel todo) async {
     await collection.add(todo);
