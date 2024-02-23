@@ -83,7 +83,8 @@ class ListViewWidget extends ConsumerWidget {
                                 child: Text(
                                   data[index].title,
                                   style: apptheme.typography.h600!.copyWith(
-                                      color: apptheme.colors.secondary),
+                                    color: apptheme.colors.secondary,
+                                  ),
                                 ),
                               ),
                               Row(
