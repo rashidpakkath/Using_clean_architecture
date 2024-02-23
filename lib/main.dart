@@ -12,7 +12,7 @@ Future<void> main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  var user = await FirebaseAuth.instance.currentUser;
+  var user = FirebaseAuth.instance.currentUser;
   if (user == null) {
     await FirebaseAuth.instance.signInAnonymously();
   }

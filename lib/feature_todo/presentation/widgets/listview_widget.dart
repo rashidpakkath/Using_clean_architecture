@@ -16,6 +16,7 @@ class ListViewWidget extends ConsumerWidget {
     final apptheme = AppTheme.of(context);
     final constants = ref.watch(appConstantsProvider);
     return switch (ref.watch(todoProvider)) {
+      // ignore: unnecessary_null_comparison
       AsyncData(:final value) => value == null
           ? Center(
               child: Text(
@@ -44,6 +45,7 @@ class ListViewWidget extends ConsumerWidget {
                   data.sort(
                     (a, b) => a.title.compareTo(b.title),
                   );
+
                   return Padding(
                     padding: EdgeInsets.all(apptheme.spaces.space_100),
                     child: Padding(
@@ -51,7 +53,7 @@ class ListViewWidget extends ConsumerWidget {
                         horizontal: apptheme.spaces.space_150,
                       ),
                       child: Container(
-                        width: apptheme.spaces.space_500 * 5,
+                        width: double.infinity,
                         height: apptheme.spaces.space_400 * 2.1,
                         decoration: BoxDecoration(
                           color: apptheme.colors.textInverse,
@@ -78,8 +80,7 @@ class ListViewWidget extends ConsumerWidget {
                               SizedBox(
                                 width: apptheme.spaces.space_150,
                               ),
-                              SizedBox(
-                                width: apptheme.spaces.space_500 * 4.7,
+                              Expanded(
                                 child: Text(
                                   data[index].title,
                                   style: apptheme.typography.h600!.copyWith(
@@ -87,37 +88,32 @@ class ListViewWidget extends ConsumerWidget {
                                   ),
                                 ),
                               ),
-                              Row(
-                                children: [
-                                  IconButton(
-                                    onPressed: () {
-                                      showModalBottomSheet(
-                                          context: context,
-                                          builder: (context) =>
-                                              BottomsheetWidget(
-                                                todo: data[index],
-                                              ));
-                                    },
-                                    icon: Icon(
-                                      Icons.edit,
-                                      color: apptheme.colors.text,
-                                    ),
-                                  ),
-                                  IconButton(
-                                    onPressed: () {
-                                      showDialog(
-                                          context: context,
-                                          builder: ((context) => DeleteWidget(
-                                                todo: data[index],
-                                              )));
-                                    },
-                                    icon: Icon(
-                                      Icons.delete,
-                                      color: apptheme.colors.secondary,
-                                    ),
-                                  ),
-                                ],
-                              )
+                              IconButton(
+                                onPressed: () {
+                                  showModalBottomSheet(
+                                      context: context,
+                                      builder: (context) => BottomsheetWidget(
+                                            todo: data[index],
+                                          ));
+                                },
+                                icon: Icon(
+                                  Icons.edit,
+                                  color: apptheme.colors.text,
+                                ),
+                              ),
+                              IconButton(
+                                onPressed: () {
+                                  showDialog(
+                                      context: context,
+                                      builder: ((context) => DeleteWidget(
+                                            todo: data[index],
+                                          )));
+                                },
+                                icon: Icon(
+                                  Icons.delete,
+                                  color: apptheme.colors.secondary,
+                                ),
+                              ),
                             ],
                           ),
                         ),
