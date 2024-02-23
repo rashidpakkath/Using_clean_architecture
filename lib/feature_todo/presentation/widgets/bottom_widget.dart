@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:todo_project_task/core/constants/constants.dart';
 import 'package:todo_project_task/core/theme/app_theme.dart';
-import 'package:todo_project_task/core/theme/dark_theme.dart';
 import 'package:todo_project_task/core/theme/theme_provider.dart';
 import 'package:todo_project_task/feature_todo/presentation/widgets/bootom_sheet_widget.dart';
 
@@ -20,20 +19,20 @@ class BottomWidget extends ConsumerWidget {
               color: apptheme.colors.textInverse,
               spreadRadius: 0.5,
               blurRadius: 4,
-              offset: Offset(0, -1))
+              offset: const Offset(0, -1))
         ],
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(
-            apptheme.spaces.space_600,
+            apptheme.spaces.space_400,
           ),
           topRight: Radius.circular(
-            apptheme.spaces.space_600,
+            apptheme.spaces.space_400,
           ),
         ),
         color: apptheme.colors.textSubtlest,
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           TextButton(
             onPressed: () {

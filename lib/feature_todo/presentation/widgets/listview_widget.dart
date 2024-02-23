@@ -1,10 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:todo_project_task/core/theme/app_theme.dart';
 import 'package:todo_project_task/core/utils/error_snakbar_utile.dart';
-import 'package:todo_project_task/feature_todo/domain/entity/todo_entity.dart';
 import 'package:todo_project_task/feature_todo/presentation/provider/todo_provider.dart';
 import 'package:todo_project_task/feature_todo/presentation/widgets/bootom_sheet_widget.dart';
 import 'package:todo_project_task/feature_todo/presentation/widgets/delete_widget.dart';
@@ -18,7 +15,7 @@ class ListViewWidget extends ConsumerWidget {
 
     return switch (ref.watch(todoProvider)) {
       AsyncData(:final value) => SizedBox(
-          height: apptheme.spaces.space_500 * 11.9,
+          height: apptheme.spaces.space_500 * 12.7,
           child: ListView.builder(
             shrinkWrap: true,
             physics: const ClampingScrollPhysics(),
@@ -105,10 +102,10 @@ class ListViewWidget extends ConsumerWidget {
             },
           ),
         ),
-      AsyncError() => Center(
+      AsyncError() => const Center(
           child: Text("data"),
         ),
-      _ => Center(
+      _ => const Center(
           child: CircularProgressIndicator(),
         ),
     };
