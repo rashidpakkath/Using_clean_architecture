@@ -14,6 +14,8 @@ class AppConstants {
   final String txtMassege = 'This todo will delete permenantly';
   final String txtLight = 'Light';
   final String txtDark = 'Dark';
+  final String txtError = 'Errer,Please try again';
+  final String txtNoTodos = "NO TODOS";
 }
 
 @riverpod

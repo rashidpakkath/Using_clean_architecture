@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:todo_project_task/core/constants/constants.dart';
-import 'package:todo_project_task/core/theme/app_theme.dart';
 import 'package:todo_project_task/feature_todo/domain/entity/todo_entity.dart';
 import 'package:todo_project_task/feature_todo/presentation/provider/todo_provider.dart';
 

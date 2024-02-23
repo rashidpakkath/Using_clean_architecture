@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:todo_project_task/core/theme/extention/colors_extention.dart';
 import 'package:todo_project_task/core/theme/extention/spaces_extention.dart';
 import 'package:todo_project_task/core/theme/extention/typography_extention.dart';
